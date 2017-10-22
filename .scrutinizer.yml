@@ -3,8 +3,8 @@ filter:
         - 'public/*'
         - 'vendor/*'
 before_commands:
-    - "cd commbox"
-
+    - "composer install"
+    
 build:
     nodes:
         php70:
@@ -40,7 +40,7 @@ build:
     tests:
         override:
             -
-                command: ./vendor/bin/phpunit --coverage-clover=tests/coverage.xml
+                command: phpunit --coverage-clover=tests/coverage.xml
                 coverage:
                     file: coverage.xml
                     format: clover
