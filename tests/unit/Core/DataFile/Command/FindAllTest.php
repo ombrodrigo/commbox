@@ -46,6 +46,17 @@ class FindAllTest extends TestCase
         }
     }
 
+    public function testEmptyFile()
+    {
+        unlink('public/data/pessoa.txt');
+        $handler = fopen('public/data/pessoa.txt', 'w+');
+        fclose($handler);
+        $this->assertEmpty($this->object->run(''));
+    }
+
+    /**
+     * @depends testEmptyFile
+     */
     public function testRun()
     {
         $findAll = $this->object->run(null);

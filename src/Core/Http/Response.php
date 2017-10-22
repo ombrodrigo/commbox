@@ -101,10 +101,7 @@ class Response
         }
 
         if (!empty($this->responseData)) {
-            // percorre os dados e cria as variaveis a pagina
-            foreach ($this->responseData as $varName => $varValue) {
-                $$varName = $varValue;
-            }
+            extract($this->responseData);
         }
 
         include_once $this->pageRender;

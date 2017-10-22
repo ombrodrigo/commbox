@@ -25,6 +25,6 @@ abstract class File extends \SplFileObject
      */
     public function __construct()
     {
-        parent::__construct(self::DATA_FILE, 'a+');
+       parent::__construct(self::DATA_FILE, 'a+');
     }
 }

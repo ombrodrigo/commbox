@@ -39,7 +39,17 @@ class DeleteTest extends TestCase
         return $insert->run($data);
     }
 
+    public function testEmptyFile()
+    {
+        unlink('public/data/pessoa.txt');
+        $handler = fopen('public/data/pessoa.txt', 'w+');
+        fclose($handler);
+        $this->assertTrue($this->object->run('111'));
+    }
 
+    /**
+     * @depends testEmptyFile
+     */
     public function testRun()
     {
         $id = $this->insertToDelete();

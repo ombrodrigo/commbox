@@ -45,7 +45,17 @@ class SearchTest extends TestCase
             $insert->run($data);
         }
     }
+    public function testEmptyFile()
+    {
+        unlink('public/data/pessoa.txt');
+        $handler = fopen('public/data/pessoa.txt', 'w+');
+        fclose($handler);
+        $this->assertEmpty($this->object->run(['key' => '', 'value' => '']));
+    }
 
+    /**
+     * @depends testEmptyFile
+     */
     public function testRun()
     {
         $params = array(

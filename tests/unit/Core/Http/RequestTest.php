@@ -89,5 +89,12 @@ class RequestTest extends TestCase
             $responseRoutePost = 'sou um post';
         });
         $this->assertEquals('sou um post', $responseRoutePost);
+
+        # test routeGet empty
+        $this->assertEmpty($this->object->routeGet('contaCaracter', ''));
+
+        # test routePost empty
+        $_POST = array();
+        $this->assertEmpty($this->object->routePost('contaPost', ''));
     }
 }

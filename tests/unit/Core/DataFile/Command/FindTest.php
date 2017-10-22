@@ -50,7 +50,16 @@ class FindTest extends TestCase
         return $insert->run($data);
     }
 
+    public function testEmptyFile()
+    {
+        unlink('public/data/pessoa.txt');
+        $handler = fopen('public/data/pessoa.txt', 'w+');
+        fclose($handler);
+        $this->assertEmpty($this->object->run('111'));
+    }
+
     /**
+     * @depends testEmptyFile
      * @dataProvider dataProvider
      */
     public function testRun($post)
