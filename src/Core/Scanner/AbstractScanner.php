@@ -27,7 +27,7 @@ abstract class AbstractScanner
      */
     public function count($letter, $caseSensitive)
     {
-        if ($this->validate() == false) {
+        if ($this->validate() === false) {
             throw new Exception(
                 sprintf(
                     "A requisição realizada para %s não é valida",

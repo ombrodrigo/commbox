@@ -20,8 +20,6 @@ abstract class File extends \SplFileObject
      * Método de inicialização do objeto, responsável por abrir o arquivo e criar o resource do mesmo
      *
      * @access public
-     *
-     * @return void
      */
     public function __construct()
     {
