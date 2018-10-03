@@ -18,8 +18,8 @@ class DataFile extends CommandBuilder
      *
      * @access public
      *
-     * @param String $command   command a ser executado
-     * @param Array $arguments  argumentos enviados para o builder
+     * @param String        $command    command a ser executado
+     * @param array|null    $arguments  argumentos enviados para o builder
      *
      * @return resultado do método invocado
      */
@@ -33,8 +33,8 @@ class DataFile extends CommandBuilder
      *
      * @access private
      *
-     * @param String $command  command a ser executado
-     * @param Array $arguments  argumentos enviados para o builder
+     * @param String        $command    command a ser executado
+     * @param array|null    $arguments  argumentos enviados para o builder
      *
      * @return resultado do command
      */

@@ -27,7 +27,7 @@ class CadastroPessoa extends Controller
 
         $dataFile = new DataFile();
 
-        if ($existePesquisa == true) {
+        if ($existePesquisa === true) {
             $command = 'search';
         }
 

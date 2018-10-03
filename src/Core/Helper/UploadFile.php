@@ -46,7 +46,7 @@ class UploadFile
         $to = $this->mountPath($nameFile);
 
         // caso não seja uma ação via POST, copia o arquivo e finaliza o processo
-        if (is_uploaded_file($from) == false) {
+        if (is_uploaded_file($from) === false) {
             return copy($from, $to);
         }
 

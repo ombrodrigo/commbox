@@ -38,8 +38,6 @@ class Application
      * Método de inicialização do objeto
      *
      * @access public
-     *
-     * @return void
      */
     public function __construct()
     {
