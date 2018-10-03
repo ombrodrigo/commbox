@@ -11,6 +11,7 @@ namespace Commbox\Core\DataFile\Command;
 
 use Commbox\Core\DataFile\Endpoint\File;
 use Commbox\Core\DataFile\Contract\Command\Command;
+use SplTempFileObject;
 
 class Delete extends File implements Command
 {
@@ -28,7 +29,7 @@ class Delete extends File implements Command
 
         $indexDelete = (int) $params;
 
-        $temp = new \SplTempFileObject();
+        $temp = new SplTempFileObject();
 
         foreach ($this as $line) {
             if (!$this->valid()) {

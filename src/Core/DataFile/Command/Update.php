@@ -11,6 +11,7 @@ namespace Commbox\Core\DataFile\Command;
 
 use Commbox\Core\DataFile\Endpoint\File;
 use Commbox\Core\DataFile\Contract\Command\Command;
+use SplTempFileObject;
 
 class Update extends File implements Command
 {
@@ -32,7 +33,7 @@ class Update extends File implements Command
 
         $lineUpdate = $this->inLine(PHP_EOL);
 
-        $temp = new \SplTempFileObject();
+        $temp = new SplTempFileObject();
 
         foreach ($this as $line) {
             if (!$this->valid()) {

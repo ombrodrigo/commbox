@@ -9,6 +9,8 @@
  */
 namespace Commbox\Core\DataFile\Traits;
 
+use SplFileObject;
+
 trait Integrity
 {
     /**
@@ -29,7 +31,7 @@ trait Integrity
      */
     protected function getValidId()
     {
-        $sequenceFile   = new \SplFileObject($this->sequencePath, 'a+');
+        $sequenceFile   = new SplFileObject($this->sequencePath, 'a+');
         $sequenceInFile = $sequenceFile->current();
         $validId        = 1 + (int) $sequenceInFile;
         $sequenceFile->ftruncate(0);

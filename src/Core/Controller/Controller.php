@@ -9,6 +9,9 @@
  */
 namespace Commbox\Core\Controller;
 
+use Commbox\Core\Http\Request;
+use Commbox\Core\Http\Response;
+
 abstract class Controller
 {
     /**
@@ -35,5 +38,5 @@ abstract class Controller
      *
      * @return void
      */
-    abstract public function index(\Commbox\Core\Http\Request $request, \Commbox\Core\Http\Response $response);
+    abstract public function index(Request $request, Response $response);
 }

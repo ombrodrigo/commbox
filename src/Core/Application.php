@@ -11,6 +11,8 @@ namespace Commbox\Core;
 
 use Commbox\Core\Http\Request;
 use Commbox\Core\Http\Response;
+use Commbox\Controllers\ContaCaracter;
+use Commbox\Controllers\CadastroPessoa;
 
 class Application
 {
@@ -65,12 +67,12 @@ class Application
          */
         # formulario conta caracter
         $this->Request->routeGet('contaCaracter', function() {
-            \Commbox\Controllers\ContaCaracter::init()->index($this->Request, $this->Response);
+            ContaCaracter::init()->index($this->Request, $this->Response);
         });
 
         # formulario post conta caracter
         $this->Request->routePost('contaCaracter', function() {
-            \Commbox\Controllers\ContaCaracter::init()->processar($this->Request, $this->Response);
+            ContaCaracter::init()->processar($this->Request, $this->Response);
         });
 
         /**
@@ -78,37 +80,37 @@ class Application
          */
         # grid
         $this->Request->routeGet('cadastroPessoa', function() {
-            \Commbox\Controllers\CadastroPessoa::init()->index($this->Request, $this->Response);
+            CadastroPessoa::init()->index($this->Request, $this->Response);
         });
 
         # cadastro
         $this->Request->routeGet('cadastroPessoa/novo', function() {
-            \Commbox\Controllers\CadastroPessoa::init()->novo($this->Response);
+            CadastroPessoa::init()->novo($this->Response);
         });
 
         # cadastro salvar
         $this->Request->routePost('cadastroPessoa/novo', function() {
-            \Commbox\Controllers\CadastroPessoa::init()->salvar($this->Request, $this->Response);
+            CadastroPessoa::init()->salvar($this->Request, $this->Response);
         });
 
         # atualizar
         $this->Request->routeGet('cadastroPessoa/atualizar', function() {
-            \Commbox\Controllers\CadastroPessoa::init()->atualizar($this->Request, $this->Response);
+            CadastroPessoa::init()->atualizar($this->Request, $this->Response);
         });
 
         # atualizar resgitro
         $this->Request->routePost('cadastroPessoa/atualizarRegistro', function() {
-            \Commbox\Controllers\CadastroPessoa::init()->atualizarRegistro($this->Request, $this->Response);
+            CadastroPessoa::init()->atualizarRegistro($this->Request, $this->Response);
         });
 
         # excluir resgitro
         $this->Request->routeGet('cadastroPessoa/excluir', function() {
-            \Commbox\Controllers\CadastroPessoa::init()->excluir($this->Request);
+            CadastroPessoa::init()->excluir($this->Request);
         });
 
          # excluir pesquisar
         $this->Request->routePost('cadastroPessoa', function() {
-            \Commbox\Controllers\CadastroPessoa::init()->index($this->Request, $this->Response);
+            CadastroPessoa::init()->index($this->Request, $this->Response);
         });
     }
 }
