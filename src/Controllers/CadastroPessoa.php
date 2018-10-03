@@ -9,10 +9,12 @@ namespace Commbox\Controllers;
 
 use Commbox\Core\Controller\Controller;
 use Commbox\Core\DataFile\DataFile;
+use Commbox\Core\Http\Request;
+use Commbox\Core\Http\Response;
 
 class CadastroPessoa extends Controller
 {
-    public function index(\Commbox\Core\Http\Request $request, \Commbox\Core\Http\Response $response)
+    public function index(Request $request, Response $response)
     {
         $existePesquisa = false;
         $command        = 'findAll';
@@ -34,12 +36,12 @@ class CadastroPessoa extends Controller
         $response->setPage(VIEWS_PATH . '/cadastroPessoa/index', compact('registros'));
     }
 
-    public function novo(\Commbox\Core\Http\Response $response)
+    public function novo(Response $response)
     {
         $response->setPage(VIEWS_PATH . '/cadastroPessoa/formulario');
     }
 
-    public function atualizar(\Commbox\Core\Http\Request $request, \Commbox\Core\Http\Response $response)
+    public function atualizar(Request $request, Response $response)
     {
         $get            = $request->getGet();
         $dataFile       = new DataFile();
@@ -47,7 +49,7 @@ class CadastroPessoa extends Controller
         $response->setPage(VIEWS_PATH . '/cadastroPessoa/formulario', compact('registro'));
     }
 
-    public function excluir(\Commbox\Core\Http\Request $request)
+    public function excluir(Request $request)
     {
         $get            = $request->getGet();
         $dataFile       = new DataFile();
@@ -55,7 +57,7 @@ class CadastroPessoa extends Controller
         header('Location: ?cadastroPessoa');
     }
 
-    public function salvar(\Commbox\Core\Http\Request $request, \Commbox\Core\Http\Response $response)
+    public function salvar(Request $request, Response $response)
     {
         $erros = $this->validarFormulario($request, false);
 
@@ -70,7 +72,7 @@ class CadastroPessoa extends Controller
         $response->setPage(VIEWS_PATH . '/cadastroPessoa/formulario', compact('erros'));
     }
 
-    public function atualizarRegistro(\Commbox\Core\Http\Request $request, \Commbox\Core\Http\Response $response)
+    public function atualizarRegistro(Request $request, Response $response)
     {
         $erros = $this->validarFormulario($request, true);
 
@@ -85,7 +87,7 @@ class CadastroPessoa extends Controller
         $response->setPage(VIEWS_PATH . '/cadastroPessoa/formulario', compact('erros'));
     }
 
-    private function validarFormulario(\Commbox\Core\Http\Request $request, $validarId)
+    private function validarFormulario(Request $request, $validarId)
     {
         $erros          = array();
         $post           = $request->getPost();
@@ -112,7 +114,7 @@ class CadastroPessoa extends Controller
         return $erros;
     }
 
-    private function ordenaCamposPost(\Commbox\Core\Http\Request $request)
+    private function ordenaCamposPost(Request $request)
     {
         $post   = $request->getPost();
         $ordem  = array(

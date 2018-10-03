@@ -9,6 +9,8 @@
  */
 namespace Commbox\Core\DataFile\Endpoint;
 
+use InvalidArgumentException;
+
 class CommandBuilder
 {
     /**
@@ -31,7 +33,7 @@ class CommandBuilder
         $namespaceCommand = $this->mountNamespaceCommand($command);
 
         if (!class_exists($namespaceCommand)) {
-            throw new \InvalidArgumentException(sprintf('O Command %s, não foi localizada.', $namespaceCommand));
+            throw new InvalidArgumentException(sprintf('O Command %s, não foi localizada.', $namespaceCommand));
         }
 
         // invoca o command e retorna sua instancia

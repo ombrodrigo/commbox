@@ -9,6 +9,9 @@
  */
 namespace Commbox\Core\DataFile\Traits;
 
+use ReflectionClass;
+use ReflectionProperty;
+
 trait ConvertToLayout
 {
     /**
@@ -22,8 +25,8 @@ trait ConvertToLayout
      */
     protected function convert($line)
     {
-        $layout = new \ReflectionClass('Commbox\\Core\\DataFile\\Traits\\Layout');
-        $layout = $layout->getProperties(\ReflectionProperty::IS_PROTECTED);
+        $layout = new ReflectionClass('Commbox\\Core\\DataFile\\Traits\\Layout');
+        $layout = $layout->getProperties(ReflectionProperty::IS_PROTECTED);
 
         $records = array();
 

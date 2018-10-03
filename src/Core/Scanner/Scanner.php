@@ -9,6 +9,8 @@
  */
 namespace Commbox\Core\Scanner;
 
+use Commbox\Core\Scanner\AbstractScanner;
+
 class Scanner
 {
     /**
@@ -22,7 +24,7 @@ class Scanner
      *
      * @return Commbox\Commbox\Core\Scanner\AbstractScanner::count
      */
-    public function count(\Commbox\Core\Scanner\AbstractScanner $input, $letter, $caseSensitive)
+    public function count(AbstractScanner $input, $letter, $caseSensitive)
     {
         return $input->count($letter, $caseSensitive);
     }

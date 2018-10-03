@@ -9,6 +9,8 @@
  */
 namespace Commbox\Core\Scanner;
 
+use Exception;
+
 abstract class AbstractScanner
 {
     /**
@@ -26,7 +28,7 @@ abstract class AbstractScanner
     public function count($letter, $caseSensitive)
     {
         if ($this->validate() == false) {
-            throw new \Exception(
+            throw new Exception(
                 sprintf(
                     "A requisição realizada para %s não é valida",
                     substr(get_class($this), strrpos(get_class($this), '\\') + 1)
