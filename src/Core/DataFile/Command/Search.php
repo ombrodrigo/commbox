@@ -23,8 +23,8 @@ class Search extends File implements Command
      */
     public function run($params)
     {
-        $keySearch    = $params['key'];
-        $valueSearch  = $this->removeAccent($params['value']);
+        $keySearch = $params['key'];
+        $valueSearch = $this->removeAccent($params['value']);
 
         $records = array();
 

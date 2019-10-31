@@ -27,13 +27,13 @@ class ContaCaracter extends Controller
         try {
             $input = $this->capturaInputPorTipoDeContagem($request);
 
-            $processaContagem   = new Scanner();
-            $post               = $request->getPost();
-            $caracter           = $post['caracter'];
-            $caseSensitive      = isset($post['caseSensitive']) ? true : false;
+            $processaContagem = new Scanner();
+            $post = $request->getPost();
+            $caracter = $post['caracter'];
+            $caseSensitive = isset($post['caseSensitive']) ? true : false;
 
-            $resultado          = $processaContagem->count($input, $caracter, $caseSensitive);
-            $ocorrencias        = $resultado['result'];
+            $resultado = $processaContagem->count($input, $caracter, $caseSensitive);
+            $ocorrencias = $resultado['result'];
 
             $response->setPage(VIEWS_PATH . '/contaCaracter/index', compact('caracter', 'ocorrencias'));
         } catch (Exception $e) {

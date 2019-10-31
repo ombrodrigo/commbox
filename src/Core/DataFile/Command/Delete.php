@@ -23,7 +23,7 @@ class Delete extends File implements Command
      */
     public function run($params)
     {
-        if ($this->getSize() <=  0) {
+        if ($this->getSize() <= 0) {
             return true;
         }
 
@@ -36,8 +36,8 @@ class Delete extends File implements Command
                 continue;
             }
 
-            $lineArray  = $this->convert($line);
-            $id         = (int) $lineArray['id'];
+            $lineArray = $this->convert($line);
+            $id = (int) $lineArray['id'];
 
             if ($id != $indexDelete) {
                 $temp->fwrite($this->current());

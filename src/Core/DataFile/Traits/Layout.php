@@ -29,7 +29,7 @@ trait Layout
      */
     protected $id = array(
         'start' => 0,
-        'size'  => 8
+        'size' => 8
     );
 
     /**
@@ -41,7 +41,7 @@ trait Layout
      */
     protected $nome = array(
         'start' => 8,
-        'size'  => 64
+        'size' => 64
     );
 
     /**
@@ -53,7 +53,7 @@ trait Layout
      */
     protected $senha = array(
         'start' => 72,
-        'size'  => 8
+        'size' => 8
     );
 
     /**
@@ -65,7 +65,7 @@ trait Layout
      */
     protected $dataNascimento = array(
         'start' => 80,
-        'size'  => 10
+        'size' => 10
     );
 
     /**
@@ -77,7 +77,7 @@ trait Layout
      */
     protected $cidade = array(
         'start' => 90,
-        'size'  => 32
+        'size' => 32
     );
 
     /**
@@ -89,7 +89,7 @@ trait Layout
      */
     protected $cpf = array(
         'start' => 122,
-        'size'  => 14
+        'size' => 14
     );
 
     /**
@@ -101,7 +101,7 @@ trait Layout
      */
     protected $pai = array(
         'start' => 136,
-        'size'  => 64
+        'size' => 64
     );
 
     /**
@@ -113,7 +113,7 @@ trait Layout
      */
     protected $mae = array(
         'start' => 200,
-        'size'  => 64
+        'size' => 64
     );
 
     /**
@@ -125,6 +125,6 @@ trait Layout
      */
     protected $observacao = array(
         'start' => 264,
-        'size'  => 36
+        'size' => 36
     );
 }

@@ -18,11 +18,11 @@ class ScannerTest extends TestCase
                 array(
                     array(
                         'letterInFile' => array(
-                                'name'      => 'file_test.txt',
-                                'type'      => 'text/plain',
-                                'size'      => 542,
-                                'tmp_name'  => TEST_PATH . '/uploads/file_test.txt',
-                                'error'     => 0
+                            'name' => 'file_test.txt',
+                            'type' => 'text/plain',
+                            'size' => 542,
+                            'tmp_name' => TEST_PATH . '/uploads/file_test.txt',
+                            'error' => 0
                         )
                     )
                 )

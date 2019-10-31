@@ -36,13 +36,13 @@ class File extends AbstractScanner
          */
         $uploadFile = new UploadFile();
 
-        $nameFile       = $_FILES['letterInFile']['name'];
-        $pathTempFile   = $_FILES['letterInFile']['tmp_name'];
+        $nameFile = $_FILES['letterInFile']['name'];
+        $pathTempFile = $_FILES['letterInFile']['tmp_name'];
 
         $uploadFile->save($pathTempFile, $nameFile);
 
-        $pathNewFile    = $uploadFile->mountPath($nameFile);
-        $contentFile    = file_get_contents($pathNewFile);
+        $pathNewFile = $uploadFile->mountPath($nameFile);
+        $contentFile = file_get_contents($pathNewFile);
 
         $uploadFile->delete($nameFile);
 

@@ -31,11 +31,13 @@ trait Integrity
      */
     protected function getValidId()
     {
-        $sequenceFile   = new SplFileObject($this->sequencePath, 'a+');
+        $sequenceFile = new SplFileObject($this->sequencePath, 'a+');
         $sequenceInFile = $sequenceFile->current();
-        $validId        = 1 + (int) $sequenceInFile;
+        $validId = 1 + (int) $sequenceInFile;
+
         $sequenceFile->ftruncate(0);
         $sequenceFile->fwrite($validId);
+
         return $validId;
     }
 }

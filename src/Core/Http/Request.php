@@ -14,8 +14,8 @@ class Request
     /**
      * Constantes que definem as posições de controller e action da url
      */
-    const CONTROLLER_POSITION   = 1;
-    const ACTION_POSITION       = 2;
+    const CONTROLLER_POSITION = 1;
+    const ACTION_POSITION = 2;
 
     /**
      * @return Array

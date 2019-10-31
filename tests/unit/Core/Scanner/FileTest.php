@@ -16,11 +16,11 @@ class FileTest extends TestCase
                 array(
                     array(
                         'letterInFile' => array(
-                                'name'      => 'file_test.txt',
-                                'type'      => 'text/plain',
-                                'size'      => 542,
-                                'tmp_name'  => TEST_PATH . '/uploads/file_test.txt',
-                                'error'     => 0
+                            'name' => 'file_test.txt',
+                            'type' => 'text/plain',
+                            'size' => 542,
+                            'tmp_name' => TEST_PATH . '/uploads/file_test.txt',
+                            'error' => 0
                         )
                     )
                 )
@@ -84,7 +84,7 @@ class FileTest extends TestCase
         $this->assertEquals('u', $result['letter']);
         $this->assertEquals(264, $result['result']);
 
-        $result  = $this->object->count('a', true);
+        $result = $this->object->count('a', true);
         $this->assertEquals('a', $result['letter']);
         $this->assertEquals(356, $result['result']);
     }
@@ -96,11 +96,11 @@ class FileTest extends TestCase
     {
         $_FILES = $files;
 
-        $result  = $this->object->count('u', false);
+        $result = $this->object->count('u', false);
         $this->assertEquals('u', $result['letter']);
         $this->assertEquals(266, $result['result']);
 
-        $result  = $this->object->count('a', false);
+        $result = $this->object->count('a', false);
         $this->assertEquals('a', $result['letter']);
         $this->assertEquals(366, $result['result']);
     }
@@ -112,19 +112,19 @@ class FileTest extends TestCase
     {
         $_FILES = $files;
 
-        $result  = $this->object->count('vê', true);
+        $result = $this->object->count('vê', true);
         $this->assertEquals('vê', $result['letter']);
         $this->assertEquals(4, $result['result']);
 
-        $result  = $this->object->count('bibendum', true);
+        $result = $this->object->count('bibendum', true);
         $this->assertEquals('bibendum', $result['letter']);
         $this->assertEquals(2, $result['result']);
 
-        $result  = $this->object->count('Quem', false);
+        $result = $this->object->count('Quem', false);
         $this->assertEquals('Quem', $result['letter']);
         $this->assertEquals(8, $result['result']);
 
-        $result  = $this->object->count('Si u mundo tá muito paradis?', true);
+        $result = $this->object->count('Si u mundo tá muito paradis?', true);
         $this->assertEquals('Si u mundo tá muito paradis?', $result['letter']);
         $this->assertEquals(2, $result['result']);
     }

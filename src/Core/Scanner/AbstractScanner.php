@@ -36,12 +36,12 @@ abstract class AbstractScanner
             );
         }
 
-        $content        = $this->getContent();
-        $letterCheck    = $letter;
+        $content = $this->getContent();
+        $letterCheck = $letter;
 
         if ($caseSensitive == false) {
-            $content        = strtolower($content);
-            $letterCheck    = strtolower($letterCheck);
+            $content = strtolower($content);
+            $letterCheck = strtolower($letterCheck);
         }
 
         $result = substr_count($content, $letterCheck);

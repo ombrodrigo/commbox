@@ -16,16 +16,16 @@ class RequestTest extends TestCase
 
     public function setRequests()
     {
-        $_GET['get']            = '123456789';
-        $_POST['post']          = '123456789';
-        $_REQUEST['request']    = '123456789';
-        $_FILES['file']         = array(
-                                    'name'      => 'file_test.txt',
-                                    'type'      => 'text/plain',
-                                    'size'      => 542,
-                                    'tmp_name'  => TEST_PATH . '/uploads/file_test.txt',
-                                    'error'     => 0
-                                );
+        $_GET['get'] = '123456789';
+        $_POST['post'] = '123456789';
+        $_REQUEST['request'] = '123456789';
+        $_FILES['file'] = array(
+            'name' => 'file_test.txt',
+            'type' => 'text/plain',
+            'size' => 542,
+            'tmp_name' => TEST_PATH . '/uploads/file_test.txt',
+            'error' => 0
+        );
     }
 
     public function unsetRequests()

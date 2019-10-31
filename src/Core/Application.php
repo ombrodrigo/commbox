@@ -42,7 +42,7 @@ class Application
     public function __construct()
     {
         // instancia os objetos de Request e Response
-        $this->Request  = new Request;
+        $this->Request = new Request;
         $this->Response = new Response;
     }
 

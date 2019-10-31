@@ -10,10 +10,11 @@ class IntegrityTest extends TestCase
 
     public function testGetValidId()
     {
-        $testNextValidId    = new \SplFileObject('public/data/sequence/pessoa.txt', 'a+');
-        $nextValidId        = 1 + (int) $testNextValidId->current();
+        $testNextValidId = new \SplFileObject('public/data/sequence/pessoa.txt', 'a+');
+        $nextValidId = 1 + (int) $testNextValidId->current();
 
         $validId = $this->getValidId('pessoa');
+
         $this->assertTrue(is_int($validId));
         $this->assertEquals($nextValidId, $validId);
     }

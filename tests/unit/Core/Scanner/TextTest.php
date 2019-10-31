@@ -34,7 +34,7 @@ class TextTest extends TestCase
      */
     public function testValidate($post)
     {
-        $reflectionMethod  = new \ReflectionMethod('Commbox\\Core\\Scanner\\Text', 'validate');
+        $reflectionMethod = new \ReflectionMethod('Commbox\\Core\\Scanner\\Text', 'validate');
         $reflectionMethod->setAccessible(true);
 
         unset($_POST);
@@ -50,7 +50,7 @@ class TextTest extends TestCase
     {
         $_POST = $post;
 
-        $reflectionMethod  = new \ReflectionMethod('Commbox\\Core\\Scanner\\Text', 'getContent');
+        $reflectionMethod = new \ReflectionMethod('Commbox\\Core\\Scanner\\Text', 'getContent');
         $reflectionMethod->setAccessible(true);
 
         $contentPost = $post['letterInText'];
@@ -73,7 +73,7 @@ class TextTest extends TestCase
     public function testCountCaseSensitive($post)
     {
         $_POST = $post;
-        $result  = $this->object->count('u', true);
+        $result = $this->object->count('u', true);
 
         $this->assertInternalType('array', $result);
         $this->assertArrayHasKey('letter', $result);
@@ -94,11 +94,11 @@ class TextTest extends TestCase
     {
         $_POST = $post;
 
-        $result  = $this->object->count('u', false);
+        $result = $this->object->count('u', false);
         $this->assertEquals('u', $result['letter']);
         $this->assertEquals(16, $result['result']);
 
-        $result  = $this->object->count('a', false);
+        $result = $this->object->count('a', false);
         $this->assertEquals('a', $result['letter']);
         $this->assertEquals(20, $result['result']);
     }
@@ -110,19 +110,19 @@ class TextTest extends TestCase
     {
         $_POST = $post;
 
-        $result  = $this->object->count('mé', true);
+        $result = $this->object->count('mé', true);
         $this->assertEquals('mé', $result['letter']);
         $this->assertEquals(2, $result['result']);
 
-        $result  = $this->object->count('duris', true);
+        $result = $this->object->count('duris', true);
         $this->assertEquals('duris', $result['letter']);
         $this->assertEquals(1, $result['result']);
 
-        $result  = $this->object->count('Quem', false);
+        $result = $this->object->count('Quem', false);
         $this->assertEquals('Quem', $result['letter']);
         $this->assertEquals(1, $result['result']);
 
-        $result  = $this->object->count('Si u mundo tá muito paradis?', true);
+        $result = $this->object->count('Si u mundo tá muito paradis?', true);
         $this->assertEquals('Si u mundo tá muito paradis?', $result['letter']);
         $this->assertEquals(1, $result['result']);
     }

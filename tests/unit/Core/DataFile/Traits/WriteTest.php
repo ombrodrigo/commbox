@@ -25,8 +25,8 @@ class WriteTest extends TestCase
 
     public function testAdd()
     {
-        $nome   = 'Rodrigo Conceição de Araujo';
-        $senha  = 'aaa123';
+        $nome = 'Rodrigo Conceição de Araujo';
+        $senha = 'aaa123';
 
         $this->add($nome, $this->nome['size']);
         $this->add($senha, $this->senha['size']);
@@ -51,9 +51,9 @@ class WriteTest extends TestCase
 
     public function testFinish()
     {
-        $nome   = 'Rodrigo Conceição de Araujo';
-        $senha  = 'aaa123';
-        $test   = 'Rodrigo Conceicao de Araujo                                     aaa123  ';
+        $nome = 'Rodrigo Conceição de Araujo';
+        $senha = 'aaa123';
+        $test = 'Rodrigo Conceicao de Araujo                                     aaa123  ';
 
         $this->start();
 
