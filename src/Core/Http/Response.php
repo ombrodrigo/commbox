@@ -33,7 +33,7 @@ class Response
     public function __construct()
     {
         $this->responseData = array();
-        $this->pageRender   = null;
+        $this->pageRender = null;
     }
 
     /**

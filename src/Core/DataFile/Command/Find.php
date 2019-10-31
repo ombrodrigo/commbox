@@ -27,15 +27,15 @@ class Find extends File implements Command
         }
 
         $record = null;
-        $key    = (int) $params;
+        $key = (int) $params;
 
         foreach ($this as $line) {
             if (!$this->valid()) {
                 continue;
             }
 
-            $lineArray  = $this->convert($line);
-            $id         = (int) $lineArray['id'];
+            $lineArray = $this->convert($line);
+            $id = (int) $lineArray['id'];
 
             if ($key == $id) {
                 $record = $lineArray;

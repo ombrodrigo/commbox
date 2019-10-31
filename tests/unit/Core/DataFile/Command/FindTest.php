@@ -19,14 +19,14 @@ class FindTest extends TestCase
             array(
                 array(
                     array(
-                        'nome'              => date('Y-m-d H:i:s'),
-                        'senha'             => 'aaa123',
-                        'dataNascimento'    => '19/01/1985',
-                        'cidade'            => 'Porto Alegre',
-                        'cpf'               => '000.000.000-00',
-                        'pai'               => 'Pai Conceicao de Araujo',
-                        'mae'               => 'Mae Conceicao de Araujo',
-                        'observacao'        => 'Isso é um teste ' . date('Y-m-d H:i:s')
+                        'nome' => date('Y-m-d H:i:s'),
+                        'senha' => 'aaa123',
+                        'dataNascimento' => '19/01/1985',
+                        'cidade' => 'Porto Alegre',
+                        'cpf' => '000.000.000-00',
+                        'pai' => 'Pai Conceicao de Araujo',
+                        'mae' => 'Mae Conceicao de Araujo',
+                        'observacao' => 'Isso é um teste ' . date('Y-m-d H:i:s')
                     )
                 )
             );
@@ -64,7 +64,7 @@ class FindTest extends TestCase
      */
     public function testRun($post)
     {
-        $id   = $this->insertToFind();
+        $id = $this->insertToFind();
         $find = $this->object->run($id);
 
         $this->assertInternalType('array', $find);

@@ -40,8 +40,8 @@ class Update extends File implements Command
                 continue;
             }
 
-            $lineArray  = $this->convert($line);
-            $id         = (int) $lineArray['id'];
+            $lineArray = $this->convert($line);
+            $id = (int) $lineArray['id'];
 
             if ($id == $keyUpdate) {
                 $temp->fwrite($lineUpdate);

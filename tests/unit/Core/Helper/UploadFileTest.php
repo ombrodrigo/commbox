@@ -24,7 +24,7 @@ class UploadFileTest extends TestCase
 
     public function testSave()
     {
-        $nameFile    = 'file_test.txt';
+        $nameFile = 'file_test.txt';
         $from = TEST_PATH . '/uploads/file_test.txt';
         $this->assertTrue($this->object->save($from, $nameFile));
     }

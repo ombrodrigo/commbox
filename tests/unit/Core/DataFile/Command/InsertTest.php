@@ -17,14 +17,14 @@ class InsertTest extends TestCase
             array(
                 array(
                     array(
-                        'nome'              => date('Y-m-d H:i:s'),
-                        'senha'             => 'aaa123',
-                        'dataNascimento'    => '19/01/1985',
-                        'cidade'            => 'Porto Alegre',
-                        'cpf'               => '000.000.000-00',
-                        'pai'               => 'Pai Conceição de Araujo',
-                        'mae'               => 'Mãe Conceição de Araujo',
-                        'observacao'        => 'Isso é um teste ' . date('Y-m-d H:i:s') // necessário para testar se o insert foi correto
+                        'nome' => date('Y-m-d H:i:s'),
+                        'senha' => 'aaa123',
+                        'dataNascimento' => '19/01/1985',
+                        'cidade' => 'Porto Alegre',
+                        'cpf' => '000.000.000-00',
+                        'pai' => 'Pai Conceição de Araujo',
+                        'mae' => 'Mãe Conceição de Araujo',
+                        'observacao' => 'Isso é um teste ' . date('Y-m-d H:i:s') // necessário para testar se o insert foi correto
                     )
                 )
             );
@@ -46,8 +46,8 @@ class InsertTest extends TestCase
      */
     public function testRun($post)
     {
-        $testNextValidId    = new \SplFileObject('public/data/sequence/pessoa.txt', 'a+');
-        $nextValidId        = 1 + (int) $testNextValidId->current();
+        $testNextValidId = new \SplFileObject('public/data/sequence/pessoa.txt', 'a+');
+        $nextValidId = 1 + (int) $testNextValidId->current();
 
         $this->assertEquals($nextValidId, $this->object->run($post));
     }

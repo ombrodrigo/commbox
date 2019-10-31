@@ -15,14 +15,14 @@ class DataFileTest extends TestCase
             array(
                 array(
                     array(
-                        'nome'              => date('Y-m-d H:i:s'),
-                        'senha'             => 'aaa123',
-                        'dataNascimento'    => '19/01/1985',
-                        'cidade'            => 'Porto Alegre',
-                        'cpf'               => '000.000.000-00',
-                        'pai'               => 'Pai Conceicao de Araujo',
-                        'mae'               => 'Mae Conceicao de Araujo',
-                        'observacao'        => 'Isso e um teste ' . date('Y-m-d H:i:s')
+                        'nome' => date('Y-m-d H:i:s'),
+                        'senha' => 'aaa123',
+                        'dataNascimento' => '19/01/1985',
+                        'cidade' => 'Porto Alegre',
+                        'cpf' => '000.000.000-00',
+                        'pai' => 'Pai Conceicao de Araujo',
+                        'mae' => 'Mae Conceicao de Araujo',
+                        'observacao' => 'Isso e um teste ' . date('Y-m-d H:i:s')
                     )
                 )
             );
@@ -46,8 +46,8 @@ class DataFileTest extends TestCase
      */
     public function testInvokeCommand($post)
     {
-        $testNextValidId    = new \SplFileObject('public/data/sequence/pessoa.txt', 'a+');
-        $nextValidId        = 1 + (int) $testNextValidId->current();
+        $testNextValidId = new \SplFileObject('public/data/sequence/pessoa.txt', 'a+');
+        $nextValidId = 1 + (int) $testNextValidId->current();
 
         /**
          * COMMAND INSERT
@@ -79,9 +79,9 @@ class DataFileTest extends TestCase
          * COMMAND SEARCH
          */
         // realizamos pesquisa pelo nome (encontra)
-        $search         = $this->object->search(array('key' => 'nome', 'value' => $post['nome']));
+        $search = $this->object->search(array('key' => 'nome', 'value' => $post['nome']));
         $this->assertInternalType('array', $search);
-        $searchCurrent  = current($search);
+        $searchCurrent = current($search);
 
         // compara os registro do search com o post
         foreach ($post as $key => $value) {
@@ -93,12 +93,12 @@ class DataFileTest extends TestCase
         * COMMAND UPDATE
         */
         // atualiza o nome da mae
-        $post['mae']    = date('Y-m-d H:i:s');
-        $arrayUpdate    = array_merge(array('id' => $id), $post);
+        $post['mae'] = date('Y-m-d H:i:s');
+        $arrayUpdate = array_merge(array('id' => $id), $post);
         $this->assertTrue($this->object->update($arrayUpdate));
 
         // realiza pesquisa pelo nome da mae (encontra)
-        $search         = $this->object->search(array('key' => 'mae', 'value' => $post['mae']));
+        $search = $this->object->search(array('key' => 'mae', 'value' => $post['mae']));
         $this->assertInternalType('array', $search);
         $searchCurrent  = current($search);
 

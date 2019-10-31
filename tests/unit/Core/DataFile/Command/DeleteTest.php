@@ -26,14 +26,14 @@ class DeleteTest extends TestCase
         $insert = new Insert();
 
         $data = array(
-                'nome'              => date('Y-m-d H:i:s'),
-                'senha'             => 'aaa123',
-                'dataNascimento'    => '19/01/1985',
-                'cidade'            => 'Porto Alegre',
-                'cpf'               => '000.000.000-00',
-                'pai'               => 'Pai Conceicao de Araujo',
-                'mae'               => 'Mae Conceicao de Araujo',
-                'observacao'        => 'Isso é um teste ' . date('Y-m-d H:i:s')
+            'nome' => date('Y-m-d H:i:s'),
+            'senha' => 'aaa123',
+            'dataNascimento' => '19/01/1985',
+            'cidade' => 'Porto Alegre',
+            'cpf' => '000.000.000-00',
+            'pai' => 'Pai Conceicao de Araujo',
+            'mae' => 'Mae Conceicao de Araujo',
+            'observacao' => 'Isso é um teste ' . date('Y-m-d H:i:s')
         );
 
         return $insert->run($data);

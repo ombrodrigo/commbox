@@ -17,9 +17,9 @@ class CadastroPessoa extends Controller
     public function index(Request $request, Response $response)
     {
         $existePesquisa = false;
-        $command        = 'findAll';
-        $post           = $request->getPost();
-        $registros      = null;
+        $command = 'findAll';
+        $post = $request->getPost();
+        $registros = null;
 
         if (!empty($post['key']) && !empty($post['value'])) {
             $existePesquisa = true;
@@ -43,17 +43,18 @@ class CadastroPessoa extends Controller
 
     public function atualizar(Request $request, Response $response)
     {
-        $get            = $request->getGet();
-        $dataFile       = new DataFile();
-        $registro      = $dataFile->find($get['id']);
+        $get = $request->getGet();
+        $dataFile = new DataFile();
+        $registro = $dataFile->find($get['id']);
         $response->setPage(VIEWS_PATH . '/cadastroPessoa/formulario', compact('registro'));
     }
 
     public function excluir(Request $request)
     {
-        $get            = $request->getGet();
-        $dataFile       = new DataFile();
+        $get = $request->getGet();
+        $dataFile = new DataFile();
         $dataFile->delete($get['id']);
+
         header('Location: ?cadastroPessoa');
     }
 
@@ -63,9 +64,10 @@ class CadastroPessoa extends Controller
 
         if (empty($erros)) {
             $this->ordenaCamposPost($request);
-            $post       = $request->getPost();
-            $dataFile   = new DataFile();
+            $post = $request->getPost();
+            $dataFile = new DataFile();
             $dataFile->insert($post);
+
             header('Location: ?cadastroPessoa');
         }
 
@@ -78,9 +80,10 @@ class CadastroPessoa extends Controller
 
         if (empty($erros)) {
             $this->ordenaCamposPost($request);
-            $post       = $request->getPost();
-            $dataFile   = new DataFile();
+            $post = $request->getPost();
+            $dataFile = new DataFile();
             $dataFile->update($post);
+
             header('Location: ?cadastroPessoa');
         }
 
@@ -89,16 +92,16 @@ class CadastroPessoa extends Controller
 
     private function validarFormulario(Request $request, $validarId)
     {
-        $erros          = array();
-        $post           = $request->getPost();
-        $camposValidar  = array(
-            'nome'              => 'Informe o nome',
-            'senha'             => 'Informe a senha',
-            'dataNascimento'    => 'Informe a data de nascimento',
-            'cidade'            => 'Informe a cidade',
-            'cpf'               => 'Informe o CPF',
-            'pai'               => 'Informe o nome do pai',
-            'mae'               => 'Informe o nome da mãe',
+        $erros = array();
+        $post = $request->getPost();
+        $camposValidar = array(
+            'nome' => 'Informe o nome',
+            'senha' => 'Informe a senha',
+            'dataNascimento' => 'Informe a data de nascimento',
+            'cidade' => 'Informe a cidade',
+            'cpf' => 'Informe o CPF',
+            'pai' => 'Informe o nome do pai',
+            'mae' => 'Informe o nome da mãe',
         );
 
         if ($validarId == true) {
@@ -116,20 +119,21 @@ class CadastroPessoa extends Controller
 
     private function ordenaCamposPost(Request $request)
     {
-        $post   = $request->getPost();
-        $ordem  = array(
-                    'id',
-                    'nome',
-                    'senha',
-                    'dataNascimento',
-                    'cidade',
-                    'cpf',
-                    'pai',
-                    'mae',
-                    'observacao',
+        $post = $request->getPost();
+        $ordem = array(
+            'id',
+            'nome',
+            'senha',
+            'dataNascimento',
+            'cidade',
+            'cpf',
+            'pai',
+            'mae',
+            'observacao',
         );
 
         unset($_POST);
+
         foreach ($ordem as $atributo) {
             if (isset($post[$atributo])) {
                 $_POST[$atributo] = $post[$atributo];

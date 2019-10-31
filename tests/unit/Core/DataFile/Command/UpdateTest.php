@@ -20,14 +20,14 @@ class UpdateTest extends TestCase
             array(
                 array(
                     array(
-                        'nome'              => date('Y-m-d H:i:s'),
-                        'senha'             => 'aaa123',
-                        'dataNascimento'    => '19/01/1985',
-                        'cidade'            => 'Porto Alegre',
-                        'cpf'               => '000.000.000-00',
-                        'pai'               => 'Pai Conceicao de Araujo',
-                        'mae'               => 'Mae Conceicao de Araujo',
-                        'observacao'        => 'Isso e um teste ' . date('Y-m-d H:i:s')
+                        'nome' => date('Y-m-d H:i:s'),
+                        'senha' => 'aaa123',
+                        'dataNascimento' => '19/01/1985',
+                        'cidade' => 'Porto Alegre',
+                        'cpf' => '000.000.000-00',
+                        'pai' => 'Pai Conceicao de Araujo',
+                        'mae' => 'Mae Conceicao de Araujo',
+                        'observacao' => 'Isso e um teste ' . date('Y-m-d H:i:s')
                     )
                 )
             );
@@ -55,16 +55,16 @@ class UpdateTest extends TestCase
      */
     public function testRun($post)
     {
-        $id                 = $this->insertToUpdate($post);
-        $find               = new Find();
-        $resultFind         = $find->run($id);
-        $dataUpdate         = $resultFind;
+        $id = $this->insertToUpdate($post);
+        $find = new Find();
+        $resultFind = $find->run($id);
+        $dataUpdate = $resultFind;
         $dataUpdate['nome'] = 'UPDATE: ' . date('Y-m-d H:i:s');
 
         $this->object->run($dataUpdate);
 
-        $find           = new Find();
-        $resultFind     = $find->run($dataUpdate['id']);
+        $find = new Find();
+        $resultFind = $find->run($dataUpdate['id']);
 
         $this->assertInternalType('array', $resultFind);
 
